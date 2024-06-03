@@ -468,7 +468,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 	global choice1
 	global ips
 
-	choice1 = input("\n mục tiêu [0] ko có mục tiêu [1] > ")
+	choice1 = input("\n mục tiêu [1] ko có mục tiêu [0] > ")
 
 	if choice1 == "1":
 		setup_file = input("ghi cái file 'setup.txt' vào")
@@ -578,9 +578,9 @@ def proxylist():
 def numthreads():
 	global threads
 	try:
-		threads = int(input("chủ đề mày ko có quyền lựa chọn (800): "))
-	except ValueError:800
-		threads = 800
+		threads = int(input("ghi cho t là đc (800): "))
+	except ValueError:
+		threads =800
 		print ("800 threads selected.\n")
 	multiplication()
 
