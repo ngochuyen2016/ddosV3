@@ -1,0 +1,4 @@
+# termux
+
+cd ddosV3
+
