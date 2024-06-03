@@ -491,7 +491,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 			else:
 				url = "http://" + url
 		except:
-			print("mày ngu thế hả")
+			print("tấn công ")
 			starturl()
 
 		try:
